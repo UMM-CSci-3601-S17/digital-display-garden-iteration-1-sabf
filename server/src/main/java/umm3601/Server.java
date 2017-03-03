@@ -55,6 +55,9 @@ public class Server {
             return userController.getAverageAgeByCompany();
         });
 
+        /*
+        this isn't actually being used, so why not?
+         */
         // Handle "404" file not found requests:
         notFound((req, res) -> {
             res.type("text");
