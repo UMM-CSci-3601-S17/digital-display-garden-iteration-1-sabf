@@ -1,0 +1,9 @@
+<h1>Administration Panel</h1>
+<button (click)="onChange()">Monitor Comments</button>
+<button (click)="onChange()">Upload Accession csv to Database</button>
+<!--<form name="accessionUpload" ng-submit="">-->
+    <!--<input ng-model='file' type="file"/>-->
+    <!--<input type="submit" value='Submit'/>-->
+<!--</form>-->
+<input #input type='file' (input)="file = $event.target.value" />
+<button (click)="printFile()">LOL</button>
