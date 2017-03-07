@@ -1,5 +1,6 @@
 package umm3601;
 
+import umm3601.garden.GardenController;
 import umm3601.user.UserController;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ public class Server {
     public static void main(String[] args) throws IOException {
 
         UserController userController = new UserController();
+        GardenController gardenController = new GardenController();
 
         options("/*", (request, response) -> {
 
@@ -63,6 +65,13 @@ public class Server {
             res.type("text");
             res.status(404);
             return "Sorry, we couldn't find that!";
+        });
+
+        get("garden/bed/:gardenLocation", (req, res) -> {
+            res.type("application/json");
+            String gardenLocation = req.params("gardenLocation");
+            System.out.println(gardenLocation);
+            return gardenController.listPlantsInBed(req.queryMap().toMap(), gardenLocation);
         });
 
     }

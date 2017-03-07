@@ -79,7 +79,7 @@ public class Populate {
             p.setYear(2016); //TODO: REVISIT
 
             populate.getGardenCollection().insertOne(p.toBSONDocument());
-            System.out.println(p.toBSONDocument());
+            //System.out.println(p.toBSONDocument());
         }
 
 

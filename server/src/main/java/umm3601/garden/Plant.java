@@ -9,9 +9,6 @@ public class Plant {
 
     String _id;
     String plantID;
-
-
-
     String commonName;
     String cultivar;
     String source;
@@ -43,7 +40,7 @@ public class Plant {
         Document out = new Document();
         Document plantData = new Document();
 
-        plantData.append("_id", this._id);
+        //plantData.append("_id", this._id);
         plantData.append("plantID", this.plantID);
         plantData.append("plantType", this.plantType);
         plantData.append("commonName", this.commonName);
@@ -56,7 +53,7 @@ public class Plant {
         //plantData.append("recognitions", new String[0]);
 
         out.append("plant", plantData);
-        return out;
+        return plantData;
     }
 
     public String getID() {
