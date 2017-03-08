@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
+    <input #input type="type" placeholder="Filter by Bed" (input)="searchBED = $event.target.value">
+    <br>
+    <li class="list-group-item list group item-info">Beds!</li>
+    <li *ngFor="let bed of beds | filterBy: { id: searchBED }" class="list-group-item">
+        {{ bed.id }} <br>
+    </li>
+
+
+    <br>
     Rosary Pea
     <br>
     Rate Me!<br>

@@ -1,10 +1,7 @@
 package umm3601.garden;
 
 import com.mongodb.MongoClient;
-import com.mongodb.client.AggregateIterable;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Sorts;
 import com.mongodb.util.JSON;
@@ -37,7 +34,29 @@ public class GardenController {
         filterDoc = filterDoc.append("gardenLocation", gardenLocation);
 
         FindIterable<Document> plantsAtLocation = gardenCollection.find(filterDoc);
-        //FindIterable<Document> plantsAtLocation = gardenCollection.find();
+        //FindIterable<Document> plantsAtLocation = gard: strindenCollection.find();
+        return JSON.serialize(plantsAtLocation);
+    }
+
+//    public String listBeds()
+//    {
+//        Document filterDoc = new Document();
+//
+//        DistinctIterable<String> beds = gardenCollection.distinct("gardenLocation",String.class);
+//        //FindIterable<Document> plantsAtLocation = gardenCollection.find();
+//        for (String bed: beds) {
+//            filterDoc.append(bed,bed);
+//        }
+//        return filterDoc.toJson();
+//    }
+
+    public String displayPlant(Map<String, String[]> queryParams, String plantID)
+    {
+        Document filterDoc = new Document();
+
+        filterDoc = filterDoc.append("plantID", plantID);
+
+        FindIterable<Document> plantsAtLocation = gardenCollection.find(filterDoc);
         return JSON.serialize(plantsAtLocation);
     }
 }

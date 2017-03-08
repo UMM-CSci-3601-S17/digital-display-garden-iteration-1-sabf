@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class BedListService {
-    private bedUrl: string = API_URL + "beds";
+    private bedUrl: string = API_URL + "bed";
     constructor(private http:Http) { }
 
     getBeds(): Observable<Bed[]> {
