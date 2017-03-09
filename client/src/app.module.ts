@@ -5,7 +5,6 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent }         from './app/app.component';
 import { NavbarComponent } from './app/navbar/navbar.component';
 import { HomeComponent} from './app/home/home.component';
-import { KittensComponent }   from './app/kittens/kittens.component';
 import { UserListComponent } from './app/users/user-list.component';
 import { UserListService } from './app/users/user-list.service';
 import { BedListService } from './app/garden/bed-list.service';
@@ -28,11 +27,10 @@ import {BedListComponent} from "./app/garden/bed-list.component";
     ],
     declarations: [
         AppComponent,
-        KittensComponent,
         HomeComponent,
         NavbarComponent,
         UserListComponent,
-        BedListComponent
+        BedListComponent,
         UserListComponent,
         AdminComponent,
         FileUploadComponent
