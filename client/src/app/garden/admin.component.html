@@ -1,8 +1,15 @@
 <h1>Administration Panel</h1>
 <button (click)="onChange()">Monitor Comments</button>
-<button (click)="onChange()">Upload Accession csv to Database</button>
 <!--<form name="accessionUpload" ng-submit="">-->
     <!--<input ng-model='file' type="file"/>-->
     <!--<input type="submit" value='Submit'/>-->
 <!--</form>-->
-<file-upload #fu (change)="fu.upload()" [multiple]="false"></file-upload>
+<div>
+    <br/>
+    <strong>Upload Accession csv to Database </strong><br/>
+    <file-upload #fu [multiple]="false"></file-upload>
+    <button (click)="fu.upload()">Upload</button>
+
+</div>
+
+
