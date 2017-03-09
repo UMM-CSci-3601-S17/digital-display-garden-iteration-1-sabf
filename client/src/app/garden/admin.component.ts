@@ -1,20 +1,24 @@
 import { Component } from '@angular/core';
-import { UploadService } from './admin.service';
+import { FileUploadComponent } from './file.upload.component'
+import { Http } from '@angular/http';
 @Component({
     templateUrl: 'admin.component.html',
-    providers: [ UploadService ]
 })
 
 // Component class
 export class AdminComponent {
     public text: string;
     public file: any;
+    public fu : FileUploadComponent;
 
-    constructor() {
+    constructor(private http : Http) {
         this.text = "Hello world!";
+        let fu = new FileUploadComponent(http);
     }
+
     printFile() : void
     {
        console.log(this.file);
     }
 }
+

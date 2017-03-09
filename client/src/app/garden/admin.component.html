@@ -5,5 +5,4 @@
     <!--<input ng-model='file' type="file"/>-->
     <!--<input type="submit" value='Submit'/>-->
 <!--</form>-->
-<input #input type='file' (input)="file = $event.target.value" />
-<button (click)="printFile()">LOL</button>
+<file-upload #fu (change)="fu.upload()" [multiple]="false"></file-upload>
