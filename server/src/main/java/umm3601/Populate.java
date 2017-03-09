@@ -74,6 +74,8 @@ public class Populate {
             p.setCommonName(plant[1]);
             p.setCultivar(plant[2]);
             p.setSource(plant[3]);
+            p.setLikes();
+            p.setDisses();
             //SKIP to 6
             p.setGardenLocation(plant[6]);
             p.setYear(2016); //TODO: REVISIT

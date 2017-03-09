@@ -38,6 +38,11 @@ public class GardenController {
         return JSON.serialize(plantsAtLocation);
     }
 
+    public String listPlants() {
+        FindIterable<Document> mana = gardenCollection.find();
+        return JSON.serialize(mana);
+    }
+
 //    public String listBeds()
 //    {
 //        Document filterDoc = new Document();

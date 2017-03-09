@@ -14,6 +14,8 @@ public class Plant {
     String source;
     String gardenLocation;
     String plantType;
+    int likes;
+    int dislikes;
     int year;
     String pageURL;
     String[] plantImageURLs;
@@ -119,5 +121,9 @@ public class Plant {
     public void setPageURL(String pageURL) {
         this.pageURL = pageURL;
     }
+
+    public void setLikes() { this.likes = 0; }
+
+    public void setDisses() { this.dislikes = 0; }
 
 }
