@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { UserListComponent } from "./users/user-list.component";
 import { BedListComponent } from "./garden/bed-list.component";
 import {AdminComponent} from "./garden/admin.component";
-import {PlantListComponent} from "./garden/plant-list.component";
+import {PlantComponent} from "./garden/plant.component";
 
 // Route Configuration
 export const routes: Routes = [
@@ -13,7 +13,7 @@ export const routes: Routes = [
     { path: 'users', component: UserListComponent },
     { path: 'garden', component:  BedListComponent },
     { path: 'admin', component: AdminComponent },
-    { path: 'plant', component: PlantListComponent }
+    { path: 'plant', component: PlantComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

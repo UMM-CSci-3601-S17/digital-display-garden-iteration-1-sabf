@@ -38,17 +38,17 @@ public class GardenController {
         return JSON.serialize(plantsAtLocation);
     }
 
-//    public String listBeds()
-//    {
-//        Document filterDoc = new Document();
-//
-//        DistinctIterable<String> beds = gardenCollection.distinct("gardenLocation",String.class);
-//        //FindIterable<Document> plantsAtLocation = gardenCollection.find();
-//        for (String bed: beds) {
-//            filterDoc.append(bed,bed);
-//        }
-//        return filterDoc.toJson();
-//    }
+    public String listBeds()
+    {
+        Document filterDoc = new Document();
+
+        DistinctIterable<String> beds = gardenCollection.distinct("gardenLocation",String.class);
+        //FindIterable<Document> plantsAtLocation = gardenCollection.find();
+        for (String bed: beds) {
+            filterDoc.append(bed,bed);
+        }
+        return filterDoc.toJson();
+    }
 
     public String displayPlant(Map<String, String[]> queryParams, String plantID)
     {

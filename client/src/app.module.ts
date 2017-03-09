@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 import { PipeModule } from './pipe.module';
 import { BedListComponent } from "./app/garden/bed-list.component";
-import {PlantListComponent} from "./app/garden/plant-list.component";
+import {PlantComponent} from "./app/garden/plant.component";
 
 @NgModule({
     imports: [
@@ -35,7 +35,7 @@ import {PlantListComponent} from "./app/garden/plant-list.component";
         UserListComponent,
         AdminComponent,
         FileUploadComponent,
-        PlantListComponent
+        PlantComponent
     ],
     providers: [ UserListService, GardenService ],
     bootstrap: [ AppComponent ]

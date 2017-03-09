@@ -4,20 +4,24 @@ import { FilterBy } from "./filter.pipe";
 import {Plant} from "./plant";
 
 @Component({
-    selector: 'plant-list-component',
-    templateUrl: 'plant-list.component.html',
+    selector: 'plant-component',
+    templateUrl: 'plant.component.html',
     providers: [ FilterBy ]
 })
 
-export class PlantListComponent implements OnInit {
-    public plant: Plant;
+export class PlantComponent implements OnInit {
+    public plants: Plant[];
+    public plantID: string;
+
     constructor(private gardenService: GardenService) {
         // this.users = this.userListService.getUsers();
+        //this.plantID = this.plantID;
+     this.plantID = "16337";
     }
 
     ngOnInit(): void {
-        this.gardenService.getOnePlant().subscribe(
-            plant => this.plant = plant,
+        this.gardenService.getOnePlant(this.plantID).subscribe(
+            plant => this.plants = plant,
             err => {
                 console.log(err);
             }

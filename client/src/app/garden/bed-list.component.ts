@@ -13,7 +13,8 @@ export class BedListComponent implements OnInit {
     public plants: Plant[];
     public plant: Plant;
     public location: string;
-    public newId: string;
+    public newID: string;
+    public usedId: string = "cool";
 
     constructor(private gardenService: GardenService) {
         // this.users = this.userListService.getUsers();
@@ -35,9 +36,5 @@ export class BedListComponent implements OnInit {
                 console.log(err);
             }
         );
-    }
-
-    changeTarget(): void {
-        this.gardenService.setPlantId(this.newId);
     }
 }

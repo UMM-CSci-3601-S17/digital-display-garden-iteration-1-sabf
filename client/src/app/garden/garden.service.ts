@@ -7,7 +7,6 @@ import {Plant} from "./plant";
 export class GardenService {
     private bedUrl: string = API_URL + "garden/bed";
     private altUrl: string = API_URL + "garden/plant";
-    private static plantId: string;
     constructor(private http:Http) { }
 
     getPlantsByBed(location: string): Observable<Plant[]> {
@@ -18,13 +17,9 @@ export class GardenService {
         return this.http.request(tempUrl).map(res => res.json());
     }
 
-    getOnePlant(): Observable<Plant>{
-        let tempUrl = this.altUrl + "/" + GardenService.plantId;
+    getOnePlant(plantId : string): Observable<Plant[]>{
+        let tempUrl = this.altUrl + "/" + plantId;
 
         return this.http.request(tempUrl).map(res => res.json());
-    }
-
-    setPlantId(newId: string){
-        GardenService.plantId = newId;
     }
 }
