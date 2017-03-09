@@ -6,8 +6,8 @@ export interface Plant {
     source: string;// todo: MIGHT HAVE TO CHANGE
     gardenLocation: string;
     plantType: string;
-    likes: number;
-    dislikes: number;
+    likes: string;
+    dislikes: string;
     year: number;
     pageURL: string;
     plantImageURLs: string[];

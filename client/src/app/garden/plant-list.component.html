@@ -6,5 +6,9 @@
     <li class="list-group-item list-group-item-info">User Name</li>
     <li *ngFor="let plant of plants | filterBy: {commonName: searchTerm} | filterBy: { plantID: targetAge }" class="list-group-item">
         {{ plant.commonName }} is {{ plant.cultivar }}.
+        <br>
+        Likes: {{ plant.likes }}!
+        <br>
+        Dislikes: {{ plant.dislikes }}!
     </li>
 </ul>

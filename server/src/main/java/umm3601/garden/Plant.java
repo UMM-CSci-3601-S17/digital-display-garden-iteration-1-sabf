@@ -122,8 +122,8 @@ public class Plant {
         this.pageURL = pageURL;
     }
 
-    public void setLikes() { this.likes = 0; }
+    public void setLikes() { this.likes = 1; }
 
-    public void setDisses() { this.dislikes = 0; }
+    public void setDisses() { this.dislikes = 1; }
 
 }
