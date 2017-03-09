@@ -14,7 +14,7 @@ import { routing } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
 
 import { PipeModule } from './pipe.module';
-import {BedListComponent} from "./app/garden/bed-list.component";
+import { BedListComponent } from "./app/garden/bed-list.component";
 
 @NgModule({
     imports: [

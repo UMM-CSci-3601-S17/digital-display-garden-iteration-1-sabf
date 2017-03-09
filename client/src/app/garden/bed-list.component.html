@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <input #input type="type" placeholder="Filter by Bed" (input)="searchBED = $event.target.value">
+<!--TODO: Unresolved type on the searchBed, and value **Unsure why this is happening-->
+<input #input type="text" placeholder="Filter by Bed" (input)="searchBED = $event.target.value">
     <br>
     <li class="list-group-item list group item-info">Beds!</li>
     <li *ngFor="let bed of beds | filterBy: { id: searchBED }" class="list-group-item">
@@ -17,7 +18,20 @@
     Rosary Pea
     <br>
     Rate Me!<br>
-    <button type="submit">Pretty!</button>
-    <button type="submit">Ugly!</button>
+    <!--<button type="submit">Pretty!</button>-->
+    <!--<span class="glyphicon glyphicon-thumbs-up"></span>-->
+    <!--<button type="submit">Ugly!</button>-->
+    <!--<span class="glyphicon glyphicon-thumbs-down"></span>-->
+
+
+<!--TODO: Add a upvoted/downvoted method for when they click on this button-->
+    <div class = "buttonResponse">
+    <button class="responseButton"> <!--(click)="upvoted($event)"-->
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+    </button>
+    <button class="responseButton"> <!--(click)="downvoted($event)"-->
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+    </button>
+    </div>
 </body>
 </html>
