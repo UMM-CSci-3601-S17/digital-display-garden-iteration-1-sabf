@@ -80,10 +80,10 @@ public class Server {
             System.out.println(gardenLocation);
             return gardenController.listPlantsInBed(req.queryMap().toMap(), gardenLocation);
         });
-        get("api/garden/bed/", (req, res) -> {
-            res.type("application/json");
-            return gardenController.listPlantsInBed(req.queryMap().toMap(), gardenLocation);
-        });
+//        get("api/garden/bed/", (req, res) -> {
+//            res.type("application/json");
+//            return gardenController.listPlantsInBed(req.queryMap().toMap(), gardenLocation);
+//        });
 
         get("api/garden/plant/:plantID", (req, res) -> {
             res.type("application/json");

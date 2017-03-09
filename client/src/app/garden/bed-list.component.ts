@@ -13,8 +13,8 @@ export class BedListComponent implements OnInit {
     public plants: Plant[];
     public plant: Plant;
     public location: string;
-    public newID: string;
     public usedId: string = "cool";
+    public newId: string = "16285";
 
     constructor(private gardenService: GardenService) {
         // this.users = this.userListService.getUsers();
@@ -36,5 +36,23 @@ export class BedListComponent implements OnInit {
                 console.log(err);
             }
         );
+    }
+    getID(plant: Plant): string {
+        this.usedId = plant.plantID;
+        this.newId = this.usedId;
+
+        return this.usedId;
+    }
+
+    getNewId(): string {
+        return this.newId;
+    }
+
+    setNewId(newId: string):void {
+        this.gardenService.setId(newId);
+    }
+
+    getId(): string {
+       return this.gardenService.getid();
     }
 }

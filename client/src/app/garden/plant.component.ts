@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { GardenService } from "./garden.service";
 import { FilterBy } from "./filter.pipe";
 import {Plant} from "./plant";
@@ -11,20 +11,20 @@ import {Plant} from "./plant";
 
 export class PlantComponent implements OnInit {
     public plants: Plant[];
-    public plantID: string;
-
+    @Input() newId: string = "'sup";
     constructor(private gardenService: GardenService) {
-        // this.users = this.userListService.getUsers();
-        //this.plantID = this.plantID;
-     this.plantID = "16337";
     }
 
     ngOnInit(): void {
-        this.gardenService.getOnePlant(this.plantID).subscribe(
+        this.gardenService.getOnePlant(this.gardenService.getid()).subscribe(
             plant => this.plants = plant,
             err => {
                 console.log(err);
             }
         );
+    }
+
+    getnewId(): string {
+        return this.gardenService.getid();
     }
 }

@@ -1,7 +1,12 @@
 <ul class="list-group">
+
+    <h1>{{ getnewId() }}</h1>
     <li class="list-group-item list group item-info">Beds!</li>
     <li *ngFor="let plant of plants" class="list-group-item">
-       {{ plant.plantID }}
+        {{ plant.plantID }}<br>
+        {{ plant.commonName }}<br>
+        {{ plant.cultivar }}<br>
+
     </li>
 
 </ul>

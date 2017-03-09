@@ -9,6 +9,10 @@
 
     <li class="list-group-item list group item-info">Plants in Bed {{ location }}</li>
     <li *ngFor="let plant of plants" class="list-group-item">
+        {{ plant.plantID }}<br>
+        {{ plant.commonName }}<br>
+        {{ plant.cultivar }}<br>
+        <button (click)="setNewId(getID(plant))">Change Target</button><br>
         <a [routerLink]="['/plant']"><span class="glyphicon glyphicon-circle-arrow-right">Go to Plant!!</span></a>
     </li>
 <!-- We should have ratings on a specific Bed page
