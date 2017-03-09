@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BedListService } from "./bed-list.service";
-import { Bed } from "./bed";
+import { GardenService } from "./garden.service";
 import { FilterBy } from "./filter.pipe";
+import {Plant} from "./plant";
 
 @Component({
     selector: 'bed-list-component',
@@ -10,18 +10,34 @@ import { FilterBy } from "./filter.pipe";
 })
 
 export class BedListComponent implements OnInit {
-    public beds: Bed[];
+    public plants: Plant[];
+    public plant: Plant;
+    public location: string;
+    public newId: string;
 
-    constructor(private BedListService: BedListService) {
+    constructor(private gardenService: GardenService) {
         // this.users = this.userListService.getUsers();
     }
 
     ngOnInit(): void {
-        this.BedListService.getBeds().subscribe(
-            beds => this.beds = beds,
+        this.gardenService.getPlantsByBed(this.location).subscribe(
+            plant => this.plants = plant,
             err => {
                 console.log(err);
             }
         );
+    }
+
+    onChange(): void {
+        this.gardenService.getPlantsByBed(this.location).subscribe(
+            plant => this.plants = plant,
+            err => {
+                console.log(err);
+            }
+        );
+    }
+
+    changeTarget(): void {
+        this.gardenService.setPlantId(this.newId);
     }
 }

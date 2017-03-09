@@ -7,7 +7,7 @@ import { NavbarComponent } from './app/navbar/navbar.component';
 import { HomeComponent} from './app/home/home.component';
 import { UserListComponent } from './app/users/user-list.component';
 import { UserListService } from './app/users/user-list.service';
-import { BedListService } from './app/garden/bed-list.service';
+import { GardenService } from './app/garden/garden.service';
 import { AdminComponent } from './app/garden/admin.component';
 import { FileUploadComponent } from './app/garden/file.upload.component'
 import { routing } from './app/app.routes';
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 
 import { PipeModule } from './pipe.module';
 import { BedListComponent } from "./app/garden/bed-list.component";
+import {PlantListComponent} from "./app/garden/plant-list.component";
 
 @NgModule({
     imports: [
@@ -33,9 +34,10 @@ import { BedListComponent } from "./app/garden/bed-list.component";
         BedListComponent,
         UserListComponent,
         AdminComponent,
-        FileUploadComponent
+        FileUploadComponent,
+        PlantListComponent
     ],
-    providers: [ UserListService, BedListService ],
+    providers: [ UserListService, GardenService ],
     bootstrap: [ AppComponent ]
 })
 

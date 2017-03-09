@@ -2,16 +2,18 @@
 
     <li class="list-group-item list-group-item-info">
     <!--TODO: Unresolved type on the searchBed, and value **Unsure why this is happening-->
-        <input #input type="text" placeholder="Filter by Bed" (input)="searchBED = $event.target.value">
+        <input #input type="text" placeholder="Filter by Bed" (input)="location = $event.target.value">
     </li>
 
+    <button (click)="onChange()">Change Beds</button>
+
     <li class="list-group-item list group item-info">Beds!</li>
-    <li *ngFor="let bed of beds | filterBy: { id: searchBED }" class="list-group-item">
-        {{ bed.id }} <br>
+    <li *ngFor="let plant of plants" class="list-group-item">
+        <a [routerLink]="['/plant']"><span class="glyphicon glyphicon-circle-arrow-right">Go to Plant!!</span></a>
     </li>
 <!-- We should have ratings on a specific Bed page
 rather than on a page that is a list of beds.
-They don't/won't have bed information on this page
+They don't/won't have bed inforsmation on this page
 so it wouldn't really make sense to vote here.
 The bed list is not something that will/should be used often
 so we shouldn't prioritize it as much as flower and bed pages.

@@ -74,16 +74,15 @@ public class Server {
 //            return gardenController.listBeds(req.queryMap().toMap(), gardenLocation);
 //        });
 
-        get("garden/bed/:gardenLocation", (req, res) -> {
+        get("api/garden/bed/:gardenLocation", (req, res) -> {
             res.type("application/json");
             String gardenLocation = req.params("gardenLocation");
             System.out.println(gardenLocation);
             return gardenController.listPlantsInBed(req.queryMap().toMap(), gardenLocation);
         });
 
-        get("garden/bed/:gardenLocation/:plantID", (req, res) -> {
+        get("api/garden/plant/:plantID", (req, res) -> {
             res.type("application/json");
-            String gardenLocation = req.params("gardenLocation");
             String plantID = req.params("plantID");
             System.out.println(plantID);
             return gardenController.displayPlant(req.queryMap().toMap(), plantID);
