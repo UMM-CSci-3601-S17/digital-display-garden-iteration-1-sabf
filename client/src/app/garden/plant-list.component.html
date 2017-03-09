@@ -4,11 +4,7 @@
         <input #input type="text" placeholder="Filter by Cultivar" (input)="targetCULT = $event.target.value">
     </li>
     <li class="list-group-item list-group-item-info">Plant</li>
-    <li *ngFor="let plant of plants | filterBy: { commonName: searchCOMMON } | filterBy: { cultivar: targetCULT }" class="list-group-item">
-        {{ plant.commonName }} is {{ plant.cultivar }}.
-        <br>
-        Likes: {{ plant.likes }}!
-        <br>
-        Dislikes: {{ plant.likes }}!
+    <li *ngFor="let p of plants | filterBy: { commonName: searchCOMMON } | filterBy: { cultivar: targetCULT }" class="list-group-item">
+        <plant plant="{{ p }}"></plant>
     </li>
 </ul>

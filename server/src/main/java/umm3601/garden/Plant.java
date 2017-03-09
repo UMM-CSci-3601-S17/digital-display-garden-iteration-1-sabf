@@ -1,7 +1,5 @@
 package umm3601.garden;
 
-import com.mongodb.util.JSON;
-import org.bson.BSON;
 import org.bson.Document;
 
 public class Plant {
@@ -14,8 +12,8 @@ public class Plant {
     String source;
     String gardenLocation;
     String plantType;
-    int likes;
-    int dislikes;
+    int plus;
+    int minus;
     int year;
     String pageURL;
     String[] plantImageURLs;
@@ -25,8 +23,8 @@ public class Plant {
     {
         plantType = "flower"; //Unless otherwise specified
         pageURL = "";
-        likes = 0;
-        dislikes = 0;
+        plus = 0;
+        minus = 0;
     }
 
 //    metadata {
@@ -53,8 +51,8 @@ public class Plant {
         plantData.append("gardenLocation", this.gardenLocation);
         plantData.append("year", this.year);
         plantData.append("pageURL", this.pageURL);
-        plantData.append("likes", this.likes);
-        plantData.append("dislikes", this.dislikes);
+        plantData.append("plus", this.plus);
+        plantData.append("minus", this.minus);
         //plantData.append("plantImageURL", new String[0]);
         //plantData.append("recognitions", new String[0]);
 
@@ -126,8 +124,8 @@ public class Plant {
         this.pageURL = pageURL;
     }
 
-    public void resetLikes() { this.likes = 0; }
+    public void resetLikes() { this.plus = 0; }
 
-    public void resetDislikes() { this.dislikes = 0; }
+    public void resetDislikes() { this.minus = 0; }
 
 }

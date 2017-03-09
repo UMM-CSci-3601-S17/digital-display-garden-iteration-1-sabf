@@ -3,6 +3,7 @@ package umm3601;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import umm3601.garden.Plant;
 
@@ -85,7 +86,8 @@ public class Populate {
             //System.out.println(p.toBSONDocument());
         }
 
-
+//        populate.getGardenCollection().updateOne(Filters.eq("16001", plant.plantID));
+//            filename.update(upvotes, upvotes++);
 
     }
 }

@@ -11,6 +11,7 @@ import { FilterBy } from "./filter.pipe";
 
 export class PlantListComponent implements OnInit {
     public plants: Plant[];
+    public plus: number;
 
     constructor(private plantListService: PlantListService) {
         // this.plants = this.plantListService.getPlants();
@@ -23,5 +24,9 @@ export class PlantListComponent implements OnInit {
                 console.log(err);
             }
         );
+    }
+
+    addPlusVote(): void {
+        this.plus = this.plus + 1;
     }
 }
