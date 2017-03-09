@@ -14,6 +14,9 @@
                 <li><a [routerLink]="['/']">Home</a></li>
                 <li><a [routerLink]="['/users']">Users</a></li>
                 <li><a [routerLink]="['/garden']">Garden</a></li>
+                <!-- Admin link shouldn't be visible all the time but until
+                 we have a way for a WCROC employee authenticate themselves let's have this -->
+                <li><a [routerLink]="['/admin']"><span class="glyphicon glyphicon-eye-open">Admin</span></a></li>
             </ul>
         </div>
     </div>
