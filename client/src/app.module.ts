@@ -9,6 +9,8 @@ import { KittensComponent }   from './app/kittens/kittens.component';
 import { UserListComponent } from './app/users/user-list.component';
 import { UserListService } from './app/users/user-list.service';
 import { BedListService } from './app/garden/bed-list.service';
+import { AdminComponent } from './app/garden/admin.component';
+import { FileUploadComponent } from './app/garden/file.upload.component'
 import { routing } from './app/app.routes';
 import { FormsModule } from '@angular/forms';
 
@@ -31,6 +33,9 @@ import {BedListComponent} from "./app/garden/bed-list.component";
         NavbarComponent,
         UserListComponent,
         BedListComponent
+        UserListComponent,
+        AdminComponent,
+        FileUploadComponent
     ],
     providers: [ UserListService, BedListService ],
     bootstrap: [ AppComponent ]
