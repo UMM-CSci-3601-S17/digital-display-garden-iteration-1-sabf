@@ -63,6 +63,7 @@ public class Populate {
 
         String line;
         while ((line = fileIn.readLine()) != null) { //https://www.mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+
             Plant p = new Plant();
             // use comma as separator
             String[] plant = new String[7];
@@ -74,8 +75,8 @@ public class Populate {
             p.setCommonName(plant[1]);
             p.setCultivar(plant[2]);
             p.setSource(plant[3]);
-            p.setLikes();
-            p.setDisses();
+            p.resetLikes();
+            p.resetDislikes();
             //SKIP to 6
             p.setGardenLocation(plant[6]);
             p.setYear(2016); //TODO: REVISIT

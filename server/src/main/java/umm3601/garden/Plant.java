@@ -25,6 +25,8 @@ public class Plant {
     {
         plantType = "flower"; //Unless otherwise specified
         pageURL = "";
+        likes = 0;
+        dislikes = 0;
     }
 
 //    metadata {
@@ -51,6 +53,8 @@ public class Plant {
         plantData.append("gardenLocation", this.gardenLocation);
         plantData.append("year", this.year);
         plantData.append("pageURL", this.pageURL);
+        plantData.append("likes", this.likes);
+        plantData.append("dislikes", this.dislikes);
         //plantData.append("plantImageURL", new String[0]);
         //plantData.append("recognitions", new String[0]);
 
@@ -122,8 +126,8 @@ public class Plant {
         this.pageURL = pageURL;
     }
 
-    public void setLikes() { this.likes = 1; }
+    public void resetLikes() { this.likes = 0; }
 
-    public void setDisses() { this.dislikes = 1; }
+    public void resetDislikes() { this.dislikes = 0; }
 
 }
