@@ -1,7 +1,11 @@
 package umm3601;
 
+import spark.utils.IOUtils;
 import umm3601.garden.GardenController;
 import umm3601.user.UserController;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 import java.io.IOException;
 
@@ -29,6 +33,8 @@ public class Server {
             return "OK";
         });
 
+
+
         before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
         // Simple example route
@@ -37,6 +43,11 @@ public class Server {
         // Redirects for the "home" page
         redirect.get("", "/");
 //        redirect.get("/", "http://localhost:9000");
+
+        get("/", (req, res) -> {
+            InputStream stream = new FileInputStream("/home/hoff0899/iteration1_server/server/client/index.html");
+            return IOUtils.toString(stream);
+        });
 
         // List users
         get("api/users", (req, res) -> {
@@ -105,6 +116,11 @@ public class Server {
             String comment = req.params("comment");
             System.out.println("insert comment");
             return gardenController.insertComment(plantID,comment);
+        });
+
+        get("/*", (req, rest) -> {
+            InputStream stream = new FileInputStream("/home/hoff0899/iteration1_server/server/client/index.html");
+            return IOUtils.toString(stream);
         });
 
     }
