@@ -40,6 +40,7 @@ public class Populate {
     {
         return gardenCollection;
     }
+    //Why is there a second collection for comments? add a category to db
     public MongoCollection<Document> getCommentCollection()
     {
         return commentCollection;
