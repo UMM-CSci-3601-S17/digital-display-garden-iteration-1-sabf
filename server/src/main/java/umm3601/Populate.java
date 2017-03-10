@@ -25,18 +25,24 @@ public class Populate {
     final static int IGNORE_LINES = 4;
 
     private final MongoCollection<Document> gardenCollection;
+    private final MongoCollection<Document> commentCollection;
 
     public Populate() throws IOException {
 
         MongoClient mongoClient = new MongoClient();
         MongoDatabase db = mongoClient.getDatabase("test");
         gardenCollection = db.getCollection("garden");
+        commentCollection = db.getCollection("comments");
 
     }
 
     public MongoCollection<Document> getGardenCollection()
     {
         return gardenCollection;
+    }
+    public MongoCollection<Document> getCommentCollection()
+    {
+        return commentCollection;
     }
 
 
@@ -79,8 +85,15 @@ public class Populate {
             p.setYear(2016); //TODO: REVISIT
 
             populate.getGardenCollection().insertOne(p.toBSONDocument());
+
             //System.out.println(p.toBSONDocument());
         }
+
+        Document comms = new Document();
+        comms.append("plantID", "cool");
+        comms.append("comment", "test comment");
+
+        populate.getCommentCollection().insertOne(comms);
 
 
 

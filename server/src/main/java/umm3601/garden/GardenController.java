@@ -16,7 +16,7 @@ import static com.mongodb.client.model.Filters.*;
 public class GardenController {
 
     private final MongoCollection<Document> gardenCollection;
-
+    private final MongoCollection<Document> commentCollection;
 
     public GardenController() throws IOException {
 
@@ -25,6 +25,9 @@ public class GardenController {
         MongoDatabase db = mongoClient.getDatabase("test");
 
         gardenCollection = db.getCollection("garden");
+
+        commentCollection = db.getCollection("comments");
+
     }
 
     public String listPlantsInBed(Map<String, String[]> queryParams, String gardenLocation)
@@ -58,5 +61,26 @@ public class GardenController {
 
         FindIterable<Document> plantsAtLocation = gardenCollection.find(filterDoc);
         return JSON.serialize(plantsAtLocation);
+    }
+
+    public String getCommentsByID(String plantID){
+        Document filterDoc = new Document();
+
+        filterDoc = filterDoc.append("plantID", plantID);
+
+        FindIterable<Document> comments = commentCollection.find(filterDoc);
+
+        return JSON.serialize(comments);
+    }
+
+    public String insertComment(String plantID, String comment){
+        Document comms = new Document();
+
+        comms.append("plantID", plantID);
+        comms.append("comment", comment);
+
+        commentCollection.insertOne(comms);
+
+        return JSON.serialize(comms);
     }
 }

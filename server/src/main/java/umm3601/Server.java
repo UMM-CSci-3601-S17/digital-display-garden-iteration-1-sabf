@@ -88,8 +88,23 @@ public class Server {
         get("api/garden/plant/:plantID", (req, res) -> {
             res.type("application/json");
             String plantID = req.params("plantID");
-            System.out.println(plantID);
+            System.out.println("be cool");
             return gardenController.displayPlant(req.queryMap().toMap(), plantID);
+        });
+
+        get("api/garden/comments/:plantID", (req, res) -> {
+            res.type("application/json");
+            String plantID = req.params("plantID");
+            System.out.println("find comments");
+            return gardenController.getCommentsByID(plantID);
+        });
+
+        get("api/garden/insert/:plantID/:comment", (req, res) -> {
+            res.type("application/json");
+            String plantID = req.params("plantID");
+            String comment = req.params("comment");
+            System.out.println("insert comment");
+            return gardenController.insertComment(plantID,comment);
         });
 
     }

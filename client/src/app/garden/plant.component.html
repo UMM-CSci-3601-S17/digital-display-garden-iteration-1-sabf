@@ -1,12 +1,18 @@
 <ul class="list-group">
 
     <h1>{{ getnewId() }}</h1>
-    <li class="list-group-item list group item-info">Beds!</li>
+    <li class="list-group-item list group item-info">Plant!</li>
     <li *ngFor="let plant of plants" class="list-group-item">
         {{ plant.plantID }}<br>
         {{ plant.commonName }}<br>
         {{ plant.cultivar }}<br>
-
     </li>
+    <li class="list-group-item list group item-info">Comments!</li>
+    <li *ngFor="let comment of comments" class="list-group-item">
+        {{ comment.comment }}
+    </li>
+
+    <input #input type="text" placeholder="Insert Comment Here!!" (input)="comment = $event.target.value">
+    <button (click)="onChangeComms(comment)">Post Comment!</button>
 
 </ul>
