@@ -13,5 +13,3 @@ export interface Plant {
     plantImageURLs: string[];
     recognitions: string[];
 }
-//NOTE: we edited the mongo w/ the following command:
-// db.garden.update( { "plantID" : "16001"}, { $set: {"plus" : 9}})

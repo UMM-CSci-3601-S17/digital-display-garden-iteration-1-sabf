@@ -5,6 +5,16 @@
     </li>
     <li class="list-group-item list-group-item-info">Plant</li>
     <li *ngFor="let p of plants | filterBy: { commonName: searchCOMMON } | filterBy: { cultivar: targetCULT }" class="list-group-item">
-        <plant plant="{{ p }}"></plant>
+        <!--<plant plant="{{ p }}">fancy-pants</plant>-->
+        {{ p.commonName }} is {{ p.cultivar }}.
+        <br>
+        Likes: {{ p.plus }}
+        <button class="responseButton" onclick="p.upVote(p._id)">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+        </button>
+
+        <br>
+
+        Dislikes: {{ p.minus }}
     </li>
 </ul>

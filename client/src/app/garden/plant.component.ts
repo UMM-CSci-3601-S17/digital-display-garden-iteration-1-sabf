@@ -33,4 +33,5 @@ export class PlantComponent implements OnInit {
     ngOnInit(): void {
         this.subscribeToServiceForId();
     }
+
 }
